@@ -1,0 +1,19 @@
+<% include partials/header %>
+        <h1>Registered Students</h1>
+            <% students.forEach(function(students){ %>
+                <table>  
+                    <tr>
+                       <td><h4> <%= students.id %> </h4></td>
+                       <td><h4> <%= students.name %> </h4></td>
+                       <td><h4> <%= students.code %> </h4></td>
+                       <td><h4> <%= students.subject %> </h4></td>
+                       <td><h4> <%= students.teacher %> </h4></td>
+                       <td><h4> <%= students.schedule %> </h4></td>
+                       <td><h4> <%= students.units %> </h4></td>
+                       <td><h4> <%= students.section %> </h4></td>
+                       <td><h4> <%= students.course %> </h4></td>
+                    </tr>
+                </table> 
+    <%    }); %>
+
+<% include partials/footer %>
