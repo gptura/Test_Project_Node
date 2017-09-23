@@ -1,7 +1,20 @@
 <% include partials/header %>
         <h1>Registered Students</h1>
             <% students.forEach(function(students){ %>
-                <table>  
+            <div class="container">
+                <table class="table table-bordered">  
+                    <!--<tr>-->
+                    <!--    <th>Student ID</th>-->
+                    <!--    <th>Name</th>-->
+                    <!--    <th>Subject code</th>-->
+                    <!--    <th>Subject name</th>-->
+                    <!--    <th>Teacher</th>-->
+                    <!--    <th>Subject schedule</th>-->
+                    <!--    <th># Units</th>-->
+                    <!--    <th>Section</th>-->
+                    <!--    <th>Course</th>-->
+                    <!--</tr>-->
+                <tbody>
                     <tr>
                        <td><h4> <%= students.id %> </h4></td>
                        <td><h4> <%= students.name %> </h4></td>
@@ -13,7 +26,9 @@
                        <td><h4> <%= students.section %> </h4></td>
                        <td><h4> <%= students.course %> </h4></td>
                     </tr>
+                </tbody>
                 </table> 
+            </div>
     <%    }); %>
 
 <% include partials/footer %>

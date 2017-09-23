@@ -13,7 +13,7 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 var students = [
-        {id: "", name: "", code: "", subject: "", teacher: "", schedule: "", units: "", section: "", course: ""}
+        {id: "123456789", name: "Paul", code: "Math101", subject: "Algebra", teacher: "Rexel", schedule: "MWF", units: "4", section: "Eng1c", course: "Engineering"}
         
 ];
 
@@ -40,7 +40,9 @@ app.post("/students", function(req, res){
         section=req.body.section,
         course=req.body.course;
     
-    var newStudent = {id: id, name: name, code: code, subject: subject, teacher: teacher, schedule: schedule, units: units, section: section, course: course}
+    var newStudent = {id: id, name: name, code: code, subject: subject, 
+                    teacher: teacher, schedule: schedule, units: units, 
+                    section: section, course: course}
     students.push(newStudent);
     
     //redirect back to students registered page
