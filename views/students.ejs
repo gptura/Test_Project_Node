@@ -3,30 +3,19 @@
             <% students.forEach(function(students){ %>
             <div class="container">
                 <table class="table table-bordered">  
-                    <!--<tr>-->
-                    <!--    <th>Student ID</th>-->
-                    <!--    <th>Name</th>-->
-                    <!--    <th>Subject code</th>-->
-                    <!--    <th>Subject name</th>-->
-                    <!--    <th>Teacher</th>-->
-                    <!--    <th>Subject schedule</th>-->
-                    <!--    <th># Units</th>-->
-                    <!--    <th>Section</th>-->
-                    <!--    <th>Course</th>-->
-                    <!--</tr>-->
-                <tbody>
-                    <tr>
-                       <td><h4> <%= students.id %> </h4></td>
-                       <td><h4> <%= students.name %> </h4></td>
-                       <td><h4> <%= students.code %> </h4></td>
-                       <td><h4> <%= students.subject %> </h4></td>
-                       <td><h4> <%= students.teacher %> </h4></td>
-                       <td><h4> <%= students.schedule %> </h4></td>
-                       <td><h4> <%= students.units %> </h4></td>
-                       <td><h4> <%= students.section %> </h4></td>
-                       <td><h4> <%= students.course %> </h4></td>
-                    </tr>
-                </tbody>
+                    <tbody>
+                        <tr>
+                           <td><p> <%= students.id %> </p></td>
+                           <td><p> <%= students.name %> </p></td>
+                           <td><p> <%= students.code %> </p></td>
+                           <td><p> <%= students.subject %> </p></td>
+                           <td><p> <%= students.teacher %> </p></td>
+                           <td><p> <%= students.schedule %> </p></td>
+                           <td><p> <%= students.units %> </p></td>
+                           <td><p> <%= students.section %> </p></td>
+                           <td><p> <%= students.course %> </p></td>
+                        </tr>
+                    </tbody>
                 </table> 
             </div>
     <%    }); %>

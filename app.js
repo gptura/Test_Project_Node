@@ -1,6 +1,46 @@
-var express = require("express"),
-    app     = express(),
-    bodyParser = require("body-parser");
+var express    = require("express"),
+    app        = express(),
+    bodyParser = require("body-parser"),
+    mongoose   =require ("mongoose");
+    
+mongoose.connect("mongodb://localhost/testapp");
+
+//Schema
+var studentSchema = new mongoose.Schema({
+    id: String,
+    name: String,
+    code: String,
+    subject: String,
+    teacher: String,
+    schedule: String,
+    units: String,
+    section: String,
+    course: String
+});
+
+//Model
+var Student = mongoose.model("Student", studentSchema);
+
+// Student.create(
+//     {
+//         id: "7890123456",
+//         name: "Gean",
+//         code: "Math102",
+//         subject: "Trigonometry",
+//         teacher: "Allan",
+//         schedule: "MWF",
+//         units: "4",
+//         section: "Eng1b",
+//         course: "Engineering"
+        
+//     }, function(err, student){
+//         if(err){
+//             console.log(err);
+//         } else {
+//             console.log("Student registered");
+//             console.log(student);
+//         }
+//     });
 
 //tells node to use body parser    
 app.use(bodyParser.urlencoded({extended: true}));
@@ -12,10 +52,7 @@ app.use(express.static("public"));
 //Tells node to set all pages in views as an ejs file
 app.set("view engine", "ejs");
 
-var students = [
-        {id: "123456789", name: "Paul", code: "Math101", subject: "Algebra", teacher: "Rexel", schedule: "MWF", units: "4", section: "Eng1c", course: "Engineering"}
-        
-];
+
 
 // Root route
 app.get("/", function(req,res){
@@ -23,8 +60,15 @@ app.get("/", function(req,res){
 });
 
 app.get("/students", function(req, res){
-    
-    res.render("students", {students:students});
+    //Get all students from db
+    Student.find({}, function(err, allStudents){
+        if(err){
+            console.log(err);
+        } else {
+            res.render("students", {students: allStudents});
+        }
+    });
+    //res.render("students", {students:students});
 });
 
 //post page
@@ -43,10 +87,18 @@ app.post("/students", function(req, res){
     var newStudent = {id: id, name: name, code: code, subject: subject, 
                     teacher: teacher, schedule: schedule, units: units, 
                     section: section, course: course}
-    students.push(newStudent);
     
-    //redirect back to students registered page
-    res.redirect("/students");
+    //Create or add a new registered student and save to db
+    Student.create(newStudent, function(err, newlyRegistered){
+        if(err){
+            console.log(err);
+        }else {
+            //redirect back to students registered page
+            res.redirect("/students");
+        }
+    });
+    
+   
     
 });
 
