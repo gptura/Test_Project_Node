@@ -1,0 +1,26 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "This is  a test project using Node.JS  The web app will contain small demo apps for fun.",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.13"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gptura/Test_Project_Node.git"
+  },
+  "author": "Gean Paul Tura",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gptura/Test_Project_Node/issues"
+  },
+  "homepage": "https://github.com/gptura/Test_Project_Node#readme"
+}
