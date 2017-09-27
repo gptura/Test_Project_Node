@@ -8,11 +8,12 @@
     "ejs": "^2.5.7",
     "express": "^4.15.4",
     "mongoose": "^4.11.13"
-    "start": "node app.js"
+    
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
