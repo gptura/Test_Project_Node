@@ -49,6 +49,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 //To explicitly tell node to serve this folder together with views    
 app.use(express.static("public"));
 
+
 //Tells node to set all pages in views as an ejs file
 app.set("view engine", "ejs");
 
